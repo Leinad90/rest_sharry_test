@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->date('valid_to')->nullable();
             $table->decimal('gps_lat');
             $table->decimal('gps_lng');
+            $table->foreignIdFor('Users'); 
             $table->timestamps();
         });
     }

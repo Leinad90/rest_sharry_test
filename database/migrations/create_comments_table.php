@@ -18,6 +18,9 @@ class CreateCommentsTable extends Migration
             $table->string('nick_name');
             $table->text('content');
             $table->timestamps();
+            $table->foreignIdFor('Events'); 
+            $table->foreignIdFor('News');
+            $table->foreignIdFor('Users'); 
         });
     }
 

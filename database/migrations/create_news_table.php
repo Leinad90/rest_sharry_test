@@ -17,6 +17,7 @@ class CreateNewsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
+            $table->foreignIdFor('Users');
             $table->timestamps();
         });
     }
