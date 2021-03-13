@@ -1,0 +1,30 @@
+
+   Symfony\Component\Process\Exception\ProcessFailedException 
+
+  The command "'mysql' '--host=127.0.0.1' '--port=3306' '--user=forge' '--default-character-set=utf8mb4' 'forge'" failed.
+
+Exit Code: 1(General error)
+
+Working directory: /home/daniel/public_html/rest_sharry_test
+
+Output:
+================
+
+
+Error Output:
+================
+
+  at vendor/symfony/process/Process.php:267
+    263▕      */
+    264▕     public function mustRun(callable $callback = null, array $env = []): self
+    265▕     {
+    266▕         if (0 !== $this->run($callback, $env)) {
+  ➜ 267▕             throw new ProcessFailedException($this);
+    268▕         }
+    269▕ 
+    270▕         return $this;
+    271▕     }
+
+      [2m+14 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
