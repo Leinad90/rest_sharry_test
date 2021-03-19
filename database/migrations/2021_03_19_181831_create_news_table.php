@@ -17,7 +17,11 @@ class CreateNewsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->foreignIdFor('Users');
+            $table->date('valid_from')->nullable(TRUE);
+            $table->date('valid_to')->nullable(TRUE);
+            $table->decimal('gps_lat');
+            $table->decimal('gps_lng');
+            $table->foreignIdFor('Users'); 
             $table->timestamps();
         });
     }
